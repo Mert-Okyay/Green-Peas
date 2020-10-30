@@ -164,6 +164,7 @@ venv.bak/
 .dmypy.json
 dmypy.jsonZ
 
-#ignore LRG
+#ignore LRG and old research docs
 LRG/
+CarieCat/
 
