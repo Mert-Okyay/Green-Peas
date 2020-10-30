@@ -1,0 +1,3 @@
+[submodule "codes/clustering/Corrfunc"]
+	path = codes/clustering/Corrfunc
+	url = https://github.com/manodeep/Corrfunc
