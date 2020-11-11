@@ -41,16 +41,10 @@ def genrand(data, n, cosmo, width=0.2, useRaDec=True, scoords='galactic', use_BA
         else:
             rar_arr = np.zeros(len(ra_arr)*n_rand)
             decr_arr = np.zeros(len(dec_arr)*n_rand)
-            for i in range(len(ra_arr)):
-                rar_arr[i] = ra_arr[i] + random.uniform(-1, 1)
-                if i==len(ra_arr) and rar_arr[-1]==0:
-                    i=0
-            for i in range(len(dec_arr)):
-                decr_arr[i] = dec_arr[i] + random.uniform(-1, 1)
-                if i==len(dec_arr) and dec_arr[-1]==0:
-                    i=0
-                    #rar_arr = [ra_arr[i] + random.uniform(-1, 1) for i in range(len(ra_arr))]
-                    #decr_arr = [dec_arr[i] + random.uniform(-1, 1) for i in range(len(dec_arr))]'''
+            for i in range(len(rar_arr)):
+                index = random.randint(0, len(ra_arr)-1)
+                rar_arr[i] = ra_arr[index] + random.uniform(-1, 1)
+                decr_arr[i] = dec_arr[index] + random.uniform(-1, 1)
         if scoords == 'galactic':
             ran_coords = SkyCoord(ra=rar_arr * u.degree, dec=decr_arr * u.degree)
             ran_galcoords = ran_coords.galactic
